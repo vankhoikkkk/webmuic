@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    color: #333;
+  }
+
+  header {
+    background-color: #282c34;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+
+  header h1 {
+    margin-bottom: 10px;
+  }
+
+  .search-box {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+  }
+
+  .search-box input {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+  }
+
+  .search-box button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+
+  .search-box button:hover {
+    background-color: #45a049;
+  }
+
+  .banner {
+    background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+
+  .banner h2 {
+    font-size: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 30px;
+    border-radius: 10px;
+  }
+
+  .genres {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 30px 20px;
+  }
+
+  .genre-card {
+    background-color: white;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+
+  .genre-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .container-list-hot {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px 0;
+  }
+
+  .hot-title {
+    margin: 30px 20px 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #444;
+  }
+
+  .hot-songs {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 20px 30px;
+    gap: 15px;
+    justify-content: space-around;
+  }
+
+ 
+  .song-card img {
+    width: 100%;
+    /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của thẻ cha */
+    height: 150px;
+    /* Đặt chiều cao cố định cho ảnh */
+    border-radius: 8px;
+    /* Bo góc ảnh */
+    object-fit: cover;
+    /* Cắt ảnh để vừa với khung mà không bị méo */
+    padding: 5px;
+    /* Đặt độ rỗng đồng đều cho ảnh */
+    background-color: #f0f0f0;
+    /* Màu nền để lấp đầy khoảng trống nếu ảnh không đủ lớn */
+    box-sizing: border-box;
+    /* Bao gồm padding trong kích thước ảnh */
+  }
+
+  .song-card {
+    position: relative;
+    background-color: white;
+    min-width: 180px;
+    width: 180px;
+    /* Đặt chiều rộng cố định cho thẻ song-card */
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .song-card:hover img {
+    opacity: 0.5;
+    /* Hiệu ứng mờ khi hover */
+  }
+
+  .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    /* Ẩn nút play mặc định */
+    transition: opacity 0.3s ease;
+    z-index: 2;
+  }
+
+  .play-overlay i {
+    color: white;
+    font-size: 54px;
+    /* Kích thước biểu tượng play */
+  }
+
+  .song-card:hover .play-overlay {
+    opacity: 1;
+    /* Hiển thị nút play khi hover */
+  }
+
+
+
+
+
+  @media (max-width: 600px) {
+    .search-box input {
+      width: 70%;
+    }
+
+    .banner h2 {
+      font-size: 28px;
+      padding: 15px;
+    }
+
+    .hot-songs {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

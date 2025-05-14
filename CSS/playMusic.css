@@ -1,0 +1,231 @@
+.container-play {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to right, #e66465, #9198e5);
+    bottom: 0;
+    padding: 0 20px;
+    z-index: 2;
+    display: none;
+  
+}
+
+.container-play.show {
+    display: block;
+}
+
+.player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.cover {
+    height: 60px;
+    width: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cover>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+}
+
+.info>div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info>div span:first-child {
+    font-weight: bold;
+    color: white;
+}
+
+.info>div span:last-child {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
+    gap: 8px;
+}
+
+.controls-button {
+    display: flex;
+    gap: 20px;
+}
+
+.controls-button>button {
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.controls-button>button:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+.controls-slider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.controls-slider>input {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.controls-slider>input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.controls-volume {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    justify-content: flex-end;
+    padding-right: 20px;
+    min-width: 150px;
+}
+
+#progress {
+    width: 100%;
+}
+
+#volume {
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#volume-icon {
+    color: white;
+    font-size: 20px;
+}
+
+
+
+/* 
+.hot-songs {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 20px 30px;
+    gap: 15px;
+    justify-content: space-around;
+} */
+
+.song-card img {
+    width: 100%;
+    /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của thẻ cha */
+    height: 150px;
+    /* Đặt chiều cao cố định cho ảnh */
+    border-radius: 8px;
+    /* Bo góc ảnh */
+    object-fit: cover;
+    /* Cắt ảnh để vừa với khung mà không bị méo */
+    padding: 5px;
+    /* Đặt độ rỗng đồng đều cho ảnh */
+    background-color: #f0f0f0;
+    /* Màu nền để lấp đầy khoảng trống nếu ảnh không đủ lớn */
+    box-sizing: border-box;
+    /* Bao gồm padding trong kích thước ảnh */
+}
+
+.song-card {
+    position: relative;
+    background-color: white;
+    min-width: 180px;
+    width: 180px;
+    /* Đặt chiều rộng cố định cho thẻ song-card */
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.song-card:hover img {
+    opacity: 0.5;
+    /* Hiệu ứng mờ khi hover */
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    /* Ẩn nút play mặc định */
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.play-overlay i {
+    color: white;
+    font-size: 54px;
+    /* Kích thước biểu tượng play */
+}
+
+.song-card:hover .play-overlay {
+    opacity: 1;
+    /* Hiển thị nút play khi hover */
+}
